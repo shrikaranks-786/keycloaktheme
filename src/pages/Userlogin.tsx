@@ -2,13 +2,17 @@ import Ckpimage from '../components/common/Ckpimage'
 import Logindetails from '../components/logindetails/Logindetails'
 
 function Userlogin() {
+  const showLanguageSelector = false;
   return (
-    <div className='flex flex-wrap w-full h-full overflow-hidden'>
-      <div className='hidden md:block lg:w-1/2 md:w-2/6 h-full'>
-        <Ckpimage/>
+    <div className="w-full flex h-full overflow-hidden" style={{ fontFamily: "var(--font-primary)" }}>
+      <div className="ckp-image-section">
+        <Ckpimage />
       </div>
-      <div className='w-full md:w-4/6 lg:w-1/2 h-full flex-1'>
-        <Logindetails/>
+      <div className={`form-section ${showLanguageSelector ? "items-center justify-center" : "justify-center items-center relative"
+        }`}>
+        <div className={`${showLanguageSelector ? "form-container" : "form-container-userdetails flex flex-col justify-center"}`}>
+          <Logindetails />
+        </div>
       </div>
     </div>
   )
